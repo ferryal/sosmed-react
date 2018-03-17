@@ -18,19 +18,19 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Grid centered columns={1}>
-        <Grid.Column className='paddingBottom'>
-         <Navigation />
-        </Grid.Column>
-        <Grid.Column className='paddingTop'>
-         <Route exact path='/' component={Home}/>
-         <Route path='/user' component={ListUser}/>
-         <Route path='/post/:userId' component={ListPosts} />
-         <Route path='/users/albums/:userId' component={ListAlbum}/>
-         <Route path='/photos' component={ListPhotos}/>
+        <div>
+          <Grid centered columns={1}>
+          <Grid.Column className='paddingBottom'>
+           <Navigation />
+          </Grid.Column>
+          </Grid>
+          <Route exact path='/' component={ListUser}/>
+          <Route path='/user' component={ListUser}/>
+          <Route path='/post/:userId' component={ListPosts} />
+          <Route path='/users/albums/:userId' component={ListAlbum}/>
+          <Route path='/photos' component={ListPhotos}/>
+        </div>
          {/* <Route path={`/${match.url}/:userId`} component={ListPosts} /> */}
-        </Grid.Column>
-       </Grid>
      </Router>
     );
   }
