@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Link} from "react-router-dom"
 import { Menu} from 'semantic-ui-react'
 import SideBar from './SideBar'
+import ListPhotos from './ListPhotos'
 
 
 
@@ -24,6 +25,9 @@ class Home extends Component {
           </Link>
           <Link to="/user">
             <Menu.Item name='person' active={activeItem === 'person'} onClick={this.handleItemClick} />
+          </Link>
+          <Link to="/photos">
+            <Menu.Item name='photos' active={activeItem === 'photos'} onClick={this.handleItemClick} />
           </Link>
           {/* <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
           <Menu.Item name='friends' active={activeItem === 'friends'} onClick={this.handleItemClick} /> */}

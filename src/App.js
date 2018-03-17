@@ -7,6 +7,8 @@ import {BrowserRouter as Router,
 import Home from './components/Home'
 import Navigation from './components/Navigation'
 import ListPosts from './components/ListPosts'
+import ListAlbum from './components/ListAlbum'
+import ListPhotos from './components/ListPhotos'
 
 
 
@@ -24,6 +26,8 @@ class App extends Component {
          <Route exact path='/' component={Home}/>
          <Route path='/user' component={ListUser}/>
          <Route path='/post/:userId' component={ListPosts} />
+         <Route path='/users/albums/:userId' component={ListAlbum}/>
+         <Route path='/photos' component={ListPhotos}/>
          {/* <Route path={`/${match.url}/:userId`} component={ListPosts} /> */}
         </Grid.Column>
        </Grid>

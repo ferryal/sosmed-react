@@ -1,31 +1,27 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import ListPosts from './ListPosts'
+
 
 class ListUser extends Component {
   constructor(){
     super()
     this.state = {
-      users: [],
+      post: []
     }
   }
 
   componentDidMount(){
-    fetch('https://jsonplaceholder.typicode.com/users')
+    const { match: {params}} = this.props
+    fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}/albums`)
       .then(results => {
         return results.json();
+        console.log(results);
       }).then(data => {
-        let users = data.map((user) => {
+        let users = data.map((post) => {
           return(
-            <div key={user.id}>
+            <div key={post.id}>
               <ul>
-                <Link to={`/post/${user.id}`}>
-                  <li>name: {user.name}</li>
-                </Link>
-                <Link to={`/users/albums/${user.id}`}>
-                  <li>see album</li>
-                </Link>
-                <li>username: {user.username}</li>
+                <li>title: {post.title}</li>
               </ul>
             </div>
           )
