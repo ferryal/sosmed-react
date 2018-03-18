@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import { Card, Grid, Header } from 'semantic-ui-react'
+
 
 
 class ListUser extends Component {
@@ -19,11 +21,16 @@ class ListUser extends Component {
       }).then(data => {
         let users = data.map((post) => {
           return(
-            <div key={post.id}>
-              <ul>
-                <li>title: {post.title}</li>
-              </ul>
-            </div>
+            <Card fluid color='teal' key={post.id}>
+              <Card.Content>
+                <Card.Header textAlign='center'>
+                  {post.title}
+                </Card.Header>
+                {/* <Card.Description>
+                  {post.body}
+                </Card.Description> */}
+              </Card.Content>
+            </Card>
           )
         })
         this.setState({users: users})
@@ -36,7 +43,22 @@ class ListUser extends Component {
   render(){
     return(
       <div>
-        {this.state.users}
+        <Header size='huge' textAlign='center'>Albums</Header>
+        <Grid centered columns={3} padded>
+          <Grid.Column width={2}>
+          {/* <ListUsers
+            url={this.props.match.params.id}
+          /> */}
+          </Grid.Column>
+          <Grid.Column width={11}>
+            {this.state.users}
+          </Grid.Column>
+          <Grid.Column width={2}>
+            {/* <MenuUser
+              id={this.props.match.params.id}
+            /> */}
+          </Grid.Column>
+        </Grid>
       </div>
     )
   }
