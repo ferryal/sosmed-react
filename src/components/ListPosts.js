@@ -21,27 +21,16 @@ class ListUser extends Component {
       }).then(data => {
         let users = data.map((post) => {
           return(
-            <div>
-              <Grid.Column>
-                <Card fluid color='teal' key={post.id}>
-                  <Card.Content>
+              <Card fluid color='teal' key={post.id}>
+                <Card.Content>
                   <Card.Header textAlign='center'>
                     {post.title}
                   </Card.Header>
                   <Card.Description>
                     {post.body}
                   </Card.Description>
-                  </Card.Content>
-                </Card>
-              </Grid.Column>
-            </div>
-
-            /* <div key={post.id}>
-              <ul>
-                <li>title: {post.title}</li>
-                <li>post: {post.body}</li>
-              </ul>
-            </div> */
+                </Card.Content>
+              </Card>
           )
         })
         this.setState({users: users})
@@ -49,14 +38,24 @@ class ListUser extends Component {
       })
   }
 
-
-
   render(){
     return(
       <div>
         <Header size='huge' textAlign='center'>Posts</Header>
-        <Grid centered columns={1} padded>
-          {this.state.users}
+        <Grid centered columns={3} padded>
+          <Grid.Column width={2}>
+          {/* <ListUsers
+            url={this.props.match.params.id}
+          /> */}
+          </Grid.Column>
+          <Grid.Column width={11}>
+            {this.state.users}
+          </Grid.Column>
+          <Grid.Column width={2}>
+            {/* <MenuUser
+              id={this.props.match.params.id}
+            /> */}
+          </Grid.Column>
         </Grid>
       </div>
 

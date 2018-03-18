@@ -9,7 +9,7 @@ import Navigation from './components/Navigation'
 import ListPosts from './components/ListPosts'
 import ListAlbum from './components/ListAlbum'
 import ListPhotos from './components/ListPhotos'
-
+import UserProfile from './pages/UserProfile'
 
 
 class App extends Component {
