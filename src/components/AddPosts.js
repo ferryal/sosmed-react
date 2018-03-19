@@ -1,12 +1,15 @@
 import React, {Component} from 'react'
 // import Forms from './Forms'
-import { Input, Form, TextArea, Button, Grid, Header } from 'semantic-ui-react'
+import { Input, Form, Button, Grid, Header } from 'semantic-ui-react'
 import axios from 'axios'
+import swal from 'sweetalert';
+
 
 class AddPosts extends Component {
   constructor(){
     super()
     this.state = {
+      id: '',
       name:'',
       body:''
     }
@@ -14,6 +17,7 @@ class AddPosts extends Component {
 
   handleChange = event => {
      this.setState({
+       id: document.getElementById('id').value,
        name: document.getElementById('name').value,
        body: document.getElementById('body').value
      });
@@ -30,15 +34,29 @@ class AddPosts extends Component {
          headers: {
            'Content-Type': 'application/json; charset=UTF-8',
            'Accept': 'application/json'
+         },
+         id: {
+           userId: document.getElementById('id').value
          }
        }
-
-     axios.post(`https://jsonplaceholder.typicode.com/posts`, {data}, config)
+    const { match: {params}} = this.props
+    axios.post(`https://jsonplaceholder.typicode.com/posts/${params.userId}`, {data}, config)
          .then(res => {
+           swal({
+              title: 'Done',
+              text: 'Your Post Has Been Success',
+              icon: 'success'
+            })
            console.log(res);
            console.log(res.data);
          })
   }
+
+    // swal({
+    //    title: 'Selamat',
+    //    text: 'Anda telah berhasil membuat kelas baru',
+    //    icon: 'success'
+    //  })
 
   // componentDidMount(){
   //   // POST adds a random id to the object sent
@@ -62,6 +80,10 @@ class AddPosts extends Component {
          <Grid.Column width={12}>
           <Header size='large'>Create New Post</Header>
             <Form onSubmit={this.handleSubmit}>
+              <Form.Field>
+                <label>User Id</label>
+                <Input id='id' placeholder='User id [1-10]' onChange={this.handleChange}/>
+              </Form.Field>
               <Form.Field>
                 <label>Your Name</label>
                 <Input id='name' placeholder='Your Name' onChange={this.handleChange}/>

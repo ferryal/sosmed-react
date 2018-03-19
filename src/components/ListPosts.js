@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import { Card, Grid, Header, Icon } from 'semantic-ui-react'
+import NavPosts from './NavPosts'
 
 
 class ListUser extends Component {
@@ -51,6 +52,7 @@ class ListUser extends Component {
         <Header size='huge' textAlign='center'>Posts</Header>
         <Grid centered columns={3} padded>
           <Grid.Column width={2}>
+            <NavPosts />
           {/* <ListUsers
             url={this.props.match.params.id}
           /> */}
