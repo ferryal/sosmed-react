@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import { Image, List, Container, Divider } from 'semantic-ui-react'
+import { Image, Grid } from 'semantic-ui-react'
 
 
 
@@ -37,14 +37,9 @@ class ListUser extends Component {
 
   render(){
     return(
-      <Container textAlign={'center'}>
-
-          {this.state.photo}
-
-    </Container>
-      /* <div>
-        {this.state.users}
-      </div> */
+      <Grid centered columns={5} padded>
+        {this.state.photo}
+      </Grid>
     )
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import { Button, Card, Image, Grid } from 'semantic-ui-react'
+import { Button, Card, Image, Grid, Icon } from 'semantic-ui-react'
 import ListPosts from './ListPosts'
 
 class ListUser extends Component {
@@ -18,22 +18,22 @@ class ListUser extends Component {
       }).then(data => {
         let users = data.map((user) => {
           return(
-                <Grid.Column>
+            <Grid.Column>
+              <div>
                 <Card.Group centered key={user.id}>
                   <Card raised>
                     <Card.Content>
-                     <Image floated='right' size='mini' src='/assets/images/avatar/large/steve.jpg' />
-                     <Card.Header>
+                     <Card.Header textAlign='center'>
                        {user.name}
                     </Card.Header>
-                  <Card.Meta>
+                    <Card.Meta textAlign='center'>
                       {user.website}
-                  </Card.Meta>
-                  <Card.Description>
-                    Email:{user.email} <br/>
-                    Phone:{user.phone}
-                  </Card.Description>
-                  </Card.Content>
+                    </Card.Meta>
+                    <Card.Description>
+                      <p><Icon name='mail' color='blue'/>{user.email} </p>
+                      <p><Icon name='phone' color='blue'/>{user.phone}</p>
+                    </Card.Description>
+                    </Card.Content>
                   <Card.Content extra centered>
                      <div className='ui two buttons'>
                        <Link to={`/users/albums/${user.id}`}>
@@ -46,7 +46,10 @@ class ListUser extends Component {
                   </Card.Content>
                   </Card>
                 </Card.Group>
-              </Grid.Column>
+            </div>
+          </Grid.Column>
+
+
 
               /* <ul>
                 <Link to={`/post/${user.id}`}>

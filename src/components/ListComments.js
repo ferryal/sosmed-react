@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom'
 import { Card, Grid, Header, Icon } from 'semantic-ui-react'
 
 
-class ListUser extends Component {
+
+class ListComments extends Component {
   constructor(){
     super()
     this.state = {
@@ -13,28 +14,24 @@ class ListUser extends Component {
 
   componentDidMount(){
     const { match: {params}} = this.props
-    fetch(`https://jsonplaceholder.typicode.com/posts?userId=${params.userId}`)
+    fetch(`https://jsonplaceholder.typicode.com/posts/${params.userId}/comments`)
       .then(results => {
         return results.json();
         console.log(results);
       }).then(data => {
-        let users = data.map((post) => {
+        let users = data.map((comments) => {
           return(
-              <Card fluid color='teal' key={post.id}>
+              <Card fluid color='teal' key={comments.id}>
                 <Card.Content>
                   <Card.Header textAlign='center'>
-                    <Link to={`/posts/comments/${post.id}`}>
-                      {post.title}
-                    </Link>
+                    {comments.name}
                   </Card.Header>
+                  <Card.Meta textAlign='center'>
+                    <p><Icon name='mail' color='grey'/> {comments.email} </p>
+                  </Card.Meta>
                   <Card.Description>
-                    {post.body}
+                    {comments.body}
                   </Card.Description>
-                </Card.Content>
-                <Card.Content extra centered>
-                     <Link to={`/posts/comments/${post.id}`}>
-                       <p><Icon name='comments outline' color='grey'/> Comments </p>
-                     </Link>
                 </Card.Content>
               </Card>
           )
@@ -47,7 +44,7 @@ class ListUser extends Component {
   render(){
     return(
       <div>
-        <Header size='huge' textAlign='center'>Posts</Header>
+        <Header size='huge' textAlign='center'>Comments</Header>
         <Grid centered columns={3} padded>
           <Grid.Column width={2}>
           {/* <ListUsers
@@ -69,4 +66,4 @@ class ListUser extends Component {
   }
 }
 
-export default ListUser
+export default ListComments

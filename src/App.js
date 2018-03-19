@@ -9,8 +9,7 @@ import Navigation from './components/Navigation'
 import ListPosts from './components/ListPosts'
 import ListAlbum from './components/ListAlbum'
 import ListPhotos from './components/ListPhotos'
-import UserProfile from './pages/UserProfile'
-
+import ListComments from './components/ListComments'
 
 class App extends Component {
 
@@ -29,6 +28,7 @@ class App extends Component {
           <Route path='/post/:userId' component={ListPosts} />
           <Route path='/users/albums/:userId' component={ListAlbum}/>
           <Route path='/photos' component={ListPhotos}/>
+          <Route path='/posts/comments/:userId' component={ListComments}/>
         </div>
          {/* <Route path={`/${match.url}/:userId`} component={ListPosts} /> */}
      </Router>
