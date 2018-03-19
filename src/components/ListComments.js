@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 // import {Link} from 'react-router-dom'
 import { Card, Grid, Header, Icon } from 'semantic-ui-react'
+import NavComment from './NavComment'
+import {Link} from 'react-router-dom'
 
 
 
@@ -33,6 +35,11 @@ class ListComments extends Component {
                   <Card.Description>
                     {comments.body}
                   </Card.Description>
+                  <Card.Content extra centered>
+                       <Link to={`/comments/${comments.id}`}>
+                         <p><Icon name='comments outline' color='grey'/> Edit Comments </p>
+                       </Link>
+                  </Card.Content>
                 </Card.Content>
               </Card>
           )
@@ -48,6 +55,7 @@ class ListComments extends Component {
         <Header size='huge' textAlign='center'>Comments</Header>
         <Grid centered columns={3} padded>
           <Grid.Column width={2}>
+            <NavComment />
           {/* <ListUsers
             url={this.props.match.params.id}
           /> */}

@@ -37,6 +37,9 @@ class ListUser extends Component {
                      <Link to={`/posts/comments/${post.id}`}>
                        <p><Icon name='comments outline' color='grey'/> Comments </p>
                      </Link>
+                     <Link to={`/comments`}>
+                       <p><Icon name='commenting outline' color='grey'/> Add Comments </p>
+                     </Link>
                 </Card.Content>
               </Card>
           )

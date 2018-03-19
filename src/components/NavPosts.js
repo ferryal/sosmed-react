@@ -13,9 +13,10 @@ class NavPosts extends Component{
     const { id } = this.props
     return(
       <Menu pointing secondary vertical>
-        <Menu.Header>User </Menu.Header>
-        <Link to="/posts/create"><Menu.Item name='posts' active={activeItem === 'posts'} onClick={this.handleItemClick} /></Link>
-        <Link to={`${id}/albums`}><Menu.Item name='albums' active={activeItem === 'albums'} onClick={this.handleItemClick} /></Link>
+        <Menu.Header> Menu Posts </Menu.Header>
+        <Link to="/posts/create"><Menu.Item name='Add Post' active={activeItem === 'posts'} onClick={this.handleItemClick} /></Link>
+        <Link to={`${id}/albums`}><Menu.Item name='Edit Post' active={activeItem === 'albums'} onClick={this.handleItemClick} /></Link>
+        <Link to={`${id}/albums`}><Menu.Item name='Delete Post' active={activeItem === 'albums'} onClick={this.handleItemClick} /></Link>
       </Menu>
     )
   }

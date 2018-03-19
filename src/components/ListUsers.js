@@ -48,18 +48,6 @@ class ListUser extends Component {
                 </Card.Group>
             </div>
           </Grid.Column>
-
-
-
-              /* <ul>
-                <Link to={`/post/${user.id}`}>
-                  <li>name: {user.name}</li>
-                </Link>
-                <Link to={`/users/albums/${user.id}`}>
-                  <li>see album</li>
-                </Link>
-                <li>username: {user.username}</li>
-              </ul>  */
           )
         })
         this.setState({users: users})

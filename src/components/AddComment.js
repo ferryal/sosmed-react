@@ -4,19 +4,17 @@ import axios from 'axios'
 import swal from 'sweetalert';
 
 
-class AddPosts extends Component {
+class AddComment extends Component {
   constructor(){
     super()
     this.state = {
-      name:'',
-      body:''
+      comments:''
     }
   }
 
   handleChange = event => {
      this.setState({
-       name: document.getElementById('name').value,
-       body: document.getElementById('body').value
+       comments: document.getElementById('comments').value
      });
    }
 
@@ -24,8 +22,7 @@ class AddPosts extends Component {
      event.preventDefault();
 
      const data = {
-       name: this.state.name,
-       body: this.state.body
+       comments: this.state.comments
      };
      const config = {
          headers: {
@@ -34,10 +31,10 @@ class AddPosts extends Component {
          }
        }
 
-     axios.post(`https://jsonplaceholder.typicode.com/posts`, {data}, config)
+     axios.post(`https://jsonplaceholder.typicode.com/comments`, {data}, config)
          .then(res => {
            swal({
-              title: 'Your Post Has Been Success',
+              title: 'Your Comments Has Been Created',
               text: 'Note: the resource will not be really updated on the server but it will be faked as if. Please check [console log] in Inspect',
               icon: 'success'
             })
@@ -50,17 +47,13 @@ class AddPosts extends Component {
     return(
        <Grid centered columns={1} padded={true}>
          <Grid.Column width={12}>
-          <Header size='large'>Create New Post</Header>
+          <Header size='large'>Create New Comment</Header>
             <Form onSubmit={this.handleSubmit}>
               <Form.Field>
-                <label>Your Name</label>
-                <Input id='name' placeholder='Your Name' onChange={this.handleChange}/>
+                <label>Your Comments</label>
+                <Input id='comments' placeholder='Your Comments' onChange={this.handleChange}/>
               </Form.Field>
-              <Form.Field>
-                <label>Your Post</label>
-                <Input id='body' placeholder='Your Post' onChange={this.handleChange}/>
-              </Form.Field>
-               <Button type='submit' positive>Add Post</Button>
+               <Button type='submit' positive>Add Comments</Button>
             </Form>
           </Grid.Column>
        </Grid>
@@ -69,4 +62,4 @@ class AddPosts extends Component {
 
 }
 
-export default AddPosts
+export default AddComment

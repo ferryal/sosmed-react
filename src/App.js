@@ -10,9 +10,12 @@ import ListAlbum from './components/ListAlbum'
 import ListPhotos from './components/ListPhotos'
 import ListComments from './components/ListComments'
 import AddPosts from './components/AddPosts'
+import AddComment from './components/AddComment'
+import EditComment from './components/EditComment'
+
+
 
 class App extends Component {
-
 
   render() {
     return (
@@ -30,8 +33,9 @@ class App extends Component {
           <Route path='/photos' component={ListPhotos}/>
           <Route path='/posts/comments/:userId' component={ListComments}/>
           <Route path='/posts/create' component={AddPosts} />
+          <Route exact path='/comments' component={AddComment} />
+          <Route exact path='/comments/:postId' component={EditComment} />
         </div>
-         {/* <Route path={`/${match.url}/:userId`} component={ListPosts} /> */}
      </Router>
     );
   }
