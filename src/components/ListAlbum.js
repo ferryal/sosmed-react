@@ -43,21 +43,15 @@ class ListUser extends Component {
 
   render(){
     return(
-      <div>
+      <div className="fade-in-top">
         <Header size='huge' textAlign='center'>Albums</Header>
         <Grid centered columns={3} padded>
           <Grid.Column width={2}>
-          {/* <ListUsers
-            url={this.props.match.params.id}
-          /> */}
           </Grid.Column>
           <Grid.Column width={11}>
             {this.state.users}
           </Grid.Column>
           <Grid.Column width={2}>
-            {/* <MenuUser
-              id={this.props.match.params.id}
-            /> */}
           </Grid.Column>
         </Grid>
       </div>

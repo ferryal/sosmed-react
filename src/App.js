@@ -12,6 +12,7 @@ import ListComments from './components/ListComments'
 import AddPosts from './components/AddPosts'
 import AddComment from './components/AddComment'
 import EditComment from './components/EditComment'
+import EditPost from './components/EditPost'
 
 
 
@@ -28,13 +29,14 @@ class App extends Component {
           </Grid>
           <Route exact path='/' component={ListUser}/>
           <Route path='/user' component={ListUser}/>
-          <Route path='/post/:userId' component={ListPosts} />
+          <Route exact path='/post/:userId' component={ListPosts} />
           <Route path='/users/albums/:userId' component={ListAlbum}/>
           <Route path='/photos' component={ListPhotos}/>
           <Route path='/posts/comments/:userId' component={ListComments}/>
-          <Route path='/posts/create' component={AddPosts} />
+          <Route exact path='/posts/create' component={AddPosts} />
           <Route exact path='/comments' component={AddComment} />
           <Route path='/comments/:postId' component={EditComment} />
+          <Route  path='/posts/edit/:postId' component={EditPost} />
         </div>
      </Router>
     );

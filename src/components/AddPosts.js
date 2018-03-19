@@ -35,15 +35,15 @@ class AddPosts extends Component {
        }
 
      axios.post(`https://jsonplaceholder.typicode.com/posts`, {data}, config)
-         .then(res => {
-           swal({
-              title: 'Your Post Has Been Success',
-              text: 'Note: the resource will not be really updated on the server but it will be faked as if. Please check [console log] in Inspect',
-              icon: 'success'
-            })
-           console.log(res);
-           console.log(res.data);
-         })
+      .then(res => {
+        swal({
+          title: 'Your Post Has Been Success Created',
+          text: 'Note: the resource will not be really updated on the server but it will be faked as if. Please check [console log] in Inspect',
+          icon: 'success'
+        })
+        console.log(res);
+        console.log(res.data);
+      })
   }
 
   render(){
@@ -51,7 +51,7 @@ class AddPosts extends Component {
        <Grid centered columns={1} padded={true}>
          <Grid.Column width={12}>
           <Header size='large'>Create New Post</Header>
-            <Form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit} className="fade-in-top">
               <Form.Field>
                 <label>Your Name</label>
                 <Input id='name' placeholder='Your Name' onChange={this.handleChange}/>

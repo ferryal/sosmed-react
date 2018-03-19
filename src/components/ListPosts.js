@@ -25,6 +25,9 @@ class ListUser extends Component {
               <Card fluid color='teal' key={post.id}>
                 <Card.Content>
                   <Card.Header textAlign='center'>
+                    <Link to={`/posts/edit/${post.id}`}>
+                      <p><Icon name='edit' color='grey'/>Edit</p>
+                    </Link>
                     <Link to={`/posts/comments/${post.id}`}>
                       {post.title}
                     </Link>
@@ -51,7 +54,7 @@ class ListUser extends Component {
 
   render(){
     return(
-      <div>
+      <div className="fade-in-top">
         <Header size='huge' textAlign='center'>Posts</Header>
         <Grid centered columns={3} padded>
           <Grid.Column width={2}>

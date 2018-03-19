@@ -22,7 +22,7 @@ class ListUser extends Component {
       }).then(data => {
         let photo = data.map((post) => {
           return(
-            <div key={post.id}>
+            <div key={post.id} className="fade-in-top">
               <Image.Group>
                 <Image src={post.thumbnailUrl} alt={post.id}/>
               </Image.Group>

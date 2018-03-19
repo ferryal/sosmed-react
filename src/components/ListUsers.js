@@ -19,7 +19,7 @@ class ListUser extends Component {
         let users = data.map((user) => {
           return(
             <Grid.Column>
-              <div>
+              <div className="fade-in-top">
                 <Card.Group centered key={user.id}>
                   <Card raised>
                     <Card.Content>
@@ -59,7 +59,7 @@ class ListUser extends Component {
 
   render(){
     return(
-      <Grid centered columns={5} padded>
+      <Grid centered columns={5} padded >
         {this.state.users}
       </Grid>
     )

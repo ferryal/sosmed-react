@@ -32,10 +32,10 @@ class EditComment extends Component {
        }
 
      const { match: {params}} = this.props
-     axios.put(`https://jsonplaceholder.typicode.com/comments/${params.postId}`, data, config)
+     axios.put(`https://jsonplaceholder.typicode.com/posts/${params.postId}`, data, config)
          .then(res => {
            swal({
-              title: 'Your Comments Has Been Updated',
+              title: 'Your Post Has Been Updated',
               text: 'Note: the resource will not be really updated on the server but it will be faked as if. Please check [console log] in Inspect',
               icon: 'success'
             })
@@ -48,13 +48,13 @@ class EditComment extends Component {
     return(
        <Grid centered columns={1} padded={true}>
          <Grid.Column width={12}>
-          <Header size='large'>Edit Comment</Header>
+          <Header size='large'>Edit Post</Header>
             <Form onSubmit={this.handleSubmit} className="fade-in-top">
               <Form.Field>
-                <label> Edit Your Comments</label>
-                <Input id='comments' placeholder='Edit Your Comments' onChange={this.handleChange}/>
+                <label> Edit Your Post</label>
+                <Input id='comments' placeholder='Edit Your Post' onChange={this.handleChange}/>
               </Form.Field>
-               <Button type='submit' positive>Edit Comments</Button>
+               <Button type='submit' positive>Edit Post</Button>
             </Form>
           </Grid.Column>
        </Grid>

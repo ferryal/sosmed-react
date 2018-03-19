@@ -16,7 +16,7 @@ class Home extends Component {
     const { activeItem } = this.state
 
     return (
-      <div>
+      <div className="fade-in-top">
         <Menu inverted>
           <Link to="/">
           <Menu.Item name='Home' active={activeItem === 'Home'} onClick={this.handleItemClick} />

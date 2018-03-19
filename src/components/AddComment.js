@@ -48,7 +48,7 @@ class AddComment extends Component {
        <Grid centered columns={1} padded={true}>
          <Grid.Column width={12}>
           <Header size='large'>Create New Comment</Header>
-            <Form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit} className="fade-in-top">
               <Form.Field>
                 <label>Your Comments</label>
                 <Input id='comments' placeholder='Your Comments' onChange={this.handleChange}/>
