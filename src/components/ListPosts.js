@@ -16,6 +16,7 @@ class ListUser extends Component {
     fetch(`https://jsonplaceholder.typicode.com/posts?userId=${params.userId}`)
       .then(results => {
         return results.json();
+        // eslint-disable-next-line
         console.log(results);
       }).then(data => {
         let users = data.map((post) => {

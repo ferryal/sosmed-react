@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import { Card, Grid, Header, Icon } from 'semantic-ui-react'
 
 
@@ -17,6 +17,7 @@ class ListComments extends Component {
     fetch(`https://jsonplaceholder.typicode.com/posts/${params.userId}/comments`)
       .then(results => {
         return results.json();
+        // eslint-disable-next-line
         console.log(results);
       }).then(data => {
         let users = data.map((comments) => {

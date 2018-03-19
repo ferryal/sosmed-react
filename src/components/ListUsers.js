@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import { Button, Card, Image, Grid, Icon } from 'semantic-ui-react'
-import ListPosts from './ListPosts'
+import { Button, Card, Grid, Icon } from 'semantic-ui-react'
+// import ListPosts from './ListPosts'
 
 class ListUser extends Component {
   constructor(){

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import { Image, Grid } from 'semantic-ui-react'
 
 
@@ -17,6 +17,7 @@ class ListUser extends Component {
     fetch(`https://jsonplaceholder.typicode.com/photos`)
       .then(results => {
         return results.json();
+        // eslint-disable-next-line
         console.log(results);
       }).then(data => {
         let photo = data.map((post) => {
