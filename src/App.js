@@ -34,7 +34,7 @@ class App extends Component {
           <Route path='/posts/comments/:userId' component={ListComments}/>
           <Route path='/posts/create' component={AddPosts} />
           <Route exact path='/comments' component={AddComment} />
-          <Route exact path='/comments/:postId' component={EditComment} />
+          <Route path='/comments/:postId' component={EditComment} />
         </div>
      </Router>
     );
