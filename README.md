@@ -1,7 +1,7 @@
 
 ## Social Media - Simple
 
-<!-- This project build with react. You can try demo by click [here](http://awesome-socialmedia.netlify.com) -->
+This project build with react. You can try demo by click [here](https://sosmedku.netlify.com/)
 
 If you want start in you locally, you can follow this steps :
 1. ``` git clone https://github.com/ferryal/sosmed-react.git ```
@@ -19,6 +19,10 @@ If you want start in you locally, you can follow this steps :
 5. React hot loader
 6. Node js
 
+### Styling
+1. React semantic ui
+2. Sweetalert
+
 #### Routes
 Method | URL | Detail
 -------|-----|-------
@@ -32,3 +36,5 @@ POST | /posts/create | Post an article
 POST | /comments| Post an comment
 PUT | /comments/id | Put an comment
 PUT | /posts/edit/id | Put an article
+
+##### Note: the resource API will not be really created/updated/deleted on the server but it will be faked as if.
