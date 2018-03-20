@@ -27,7 +27,6 @@ If you want start in you locally, you can follow this steps :
 Method | URL | Detail
 -------|-----|-------
 GET | / | Get all users
-GET | /users | Get all users
 GET | /post/id | Get posts each user by id
 GET | /users/albums/id   |  Get albums each user by id
 GET | /photos | Get all photos
