@@ -37,3 +37,5 @@ PUT | /comments/id | Put an comment
 PUT | /posts/edit/id | Put an article
 
 ##### Note: the resource API will not be really created/updated/deleted on the server but it will be faked as if.
+
+##### Note: If you want get all photos be patient cause over loaded [5000 items]
