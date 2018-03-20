@@ -12,6 +12,11 @@ class Home extends Component {
           <Menu inverted>
             <Link to="/">
               <Menu.Item onClick={this.handleItemClick}>
+                Home
+            </Menu.Item>
+            </Link>
+            <Link to="/users">
+              <Menu.Item onClick={this.handleItemClick}>
                 People
             </Menu.Item>
             </Link>

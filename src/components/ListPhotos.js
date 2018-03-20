@@ -6,7 +6,7 @@ class ListUser extends Component {
   constructor() {
     super()
     this.state = {
-      post: []
+      photo: []
     }
   }
 
@@ -17,14 +17,14 @@ class ListUser extends Component {
         // eslint-disable-next-line
         console.log(results);
       }).then(data => {
-      let photo = data.map((post) => {
-        return (<div key={post.id} className="fade-in-top">
+      let photo = data.map((photo) => {
+        return (<div key={photo.id} className="fade-in-top">
           <Image.Group>
-            <Image src={post.thumbnailUrl} alt={post.id}/>
+            <Image src={photo.thumbnailUrl} alt={photo.id}/>
           </Image.Group>
         </div>)
       })
-      this.setState({photo: photo})
+      this.setState({photos: photo})
       console.log("state", this.state.photo)
     })
   }
@@ -32,7 +32,7 @@ class ListUser extends Component {
   render() {
     return (
       <Grid centeredcolumns={5} padded>
-        {this.state.photo}
+        {this.state.photos}
       </Grid>)
   }
 }

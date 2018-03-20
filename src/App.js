@@ -28,6 +28,7 @@ class App extends Component {
           </Grid.Column>
           </Grid>
           <Route exact path='/' component={ListUser}/>
+          <Route  path='/users' component={ListUser}/>
           <Route exact path='/post/:userId' component={ListPosts} />
           <Route path='/users/albums/:userId' component={ListAlbum}/>
           <Route path='/photos' component={ListPhotos}/>
