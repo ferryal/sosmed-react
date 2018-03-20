@@ -3,6 +3,9 @@ html {
   overflow-y: scroll;
 }
 
+.card-user {
+  margin-top: 40px !important;
+}
 /* Styling Animate*/
 
 .fade-in-top {

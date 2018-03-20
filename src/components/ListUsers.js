@@ -1,68 +1,67 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import { Button, Card, Grid, Icon } from 'semantic-ui-react'
+import {Button, Card, Grid, Icon} from 'semantic-ui-react'
 // import ListPosts from './ListPosts'
 
 class ListUser extends Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
-      users: [],
+      users: []
     }
   }
 
-  componentDidMount(){
+  componentDidMount(props) {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(results => {
         return results.json();
       }).then(data => {
-        let users = data.map((user) => {
-          return(
+      let users = data.map((user) => {
+        return (
+          <div key={user.id}>
             <Grid.Column>
               <div className="fade-in-top">
-                <Card.Group centered key={user.id}>
-                  <Card raised>
+                <Card.Group>
+                  <Card raised className="card-user">
                     <Card.Content>
-                     <Card.Header textAlign='center'>
-                       {user.name}
-                    </Card.Header>
-                    <Card.Meta textAlign='center'>
-                      {user.website}
-                    </Card.Meta>
-                    <Card.Description>
-                      <p><Icon name='mail' color='blue'/>{user.email} </p>
-                      <p><Icon name='phone' color='blue'/>{user.phone}</p>
-                    </Card.Description>
+                      <Card.Header textAlign='center'>
+                        {user.name}
+                      </Card.Header>
+                      <Card.Meta textAlign='center'>
+                        {user.website}
+                      </Card.Meta>
+                      <Card.Description>
+                        <p><Icon name='mail' color='blue'/>{user.email}</p>
+                        <p><Icon name='phone' color='blue'/>{user.phone}</p>
+                      </Card.Description>
                     </Card.Content>
-                  <Card.Content extra centered>
-                     <div className='ui two buttons'>
-                       <Link to={`/users/albums/${user.id}`}>
-                         <Button inverted color='green'>Albums</Button>
-                       </Link>
-                       <Link to={`/post/${user.id}`}>
+                    <Card.Content extra>
+                      <div className='ui two buttons'>
+                        <Link to={`/users/albums/${user.id}`}>
+                          <Button inverted color='green'>Albums</Button>
+                        </Link>
+                        <Link to={`/post/${user.id}`}>
                           <Button inverted fluid color='blue'>Posts</Button>
-                       </Link>
-                     </div>
-                  </Card.Content>
+                        </Link>
+                      </div>
+                    </Card.Content>
                   </Card>
                 </Card.Group>
-            </div>
-          </Grid.Column>
-          )
-        })
-        this.setState({users: users})
-        console.log("state", this.state.users)
+              </div>
+            </Grid.Column>
+          </div>
+      )
       })
+      this.setState({users: users})
+      console.log("state", this.state.users)
+    })
   }
 
-
-
-  render(){
-    return(
-      <Grid centered columns={5} padded >
+  render() {
+    return (
+      <Grid centered columns={5} padded>
         {this.state.users}
-      </Grid>
-    )
+      </Grid>)
   }
 }
 
