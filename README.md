@@ -8,6 +8,8 @@ If you want start in you locally, you can follow this steps :
 2. ``` cd sosmed-react ```
 3. ``` npm install ``` or ``` yarn install ```
 4. ``` npm start ``` or ``` yarn start ```
+5. ``` Local: http://localhost:3000/ ``` or ``` On Your Network:  http://192.168.0.106:3000/ ```
+
 
 #### Tech Stack
 1. React js
